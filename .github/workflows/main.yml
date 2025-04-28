@@ -1,6 +1,7 @@
 name: My-React-App
 
-on: push
+on:
+  workflow_dispatch:
 
 jobs:
     build:
