@@ -11,7 +11,7 @@ jobs:
             uses: actions/checkout@v3
 
           - name: Docker build image
-            run: docker build -t denzoenzo916/my-react-app:latest -f Dockerfile -e .
+            run: docker build -t denzoenzo916/my-react-app:latest -f Dockerfile
 
           - name: Docker push image
             run: |
