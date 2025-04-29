@@ -1,7 +1,8 @@
 name: My-React-App
 
 on:
-  workflow_dispatch:
+  push
+  #workflow_dispatch:
 
 jobs:
     build:
@@ -10,10 +11,19 @@ jobs:
           - name: checkout code 
             uses: actions/checkout@v3
 
-          - name: Install Dependencies
-            run: echo 'this is a test'
+          - name: Install OpenShift CLI
+            uses: redhat-actions/openshift-tools-installer@v1
+            with:
+              oc: "4"
+              
+          - name: Login to Openshift
+            uses: redhat-actions/oc-login@v1
+            with:
+              openshift_server_url: ${{ secrets.OPENSHIFT_URL }}
+              openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
 
-          #test
+
+
 
 
             
