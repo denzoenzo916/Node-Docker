@@ -16,8 +16,8 @@ jobs:
           - name: Docker push image
             run: |
               docker login -u denzoenzo916 -p ${{ secrets.DOCKER_HUB_TOKEN }}
-              docker push my-react-app:latest
-
+              docker tag my-react-app:latest denzoenzo916/my-react-app:v1.0
+              docker push denzoenzo916/my-react-app:v1.0
             
           
           - name: Install OpenShift CLI
