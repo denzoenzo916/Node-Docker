@@ -12,11 +12,11 @@ jobs:
 
           - name: Docker build image
             run: docker build -t denzoenzo916/my-react-app:latest .
-
+            
           - name: Docker push image
             run: |
-              docker login -u ${{ env.DOCKER_LOGIN}} -p ${{ secrets.DOCKER_HUB_TOKEN }}
-              docker push denzoenzo916/my-react-app:latest
+              docker login -u denzoenzo916 -p ${{ secrets.DOCKER_HUB_TOKEN }}
+            
           
           - name: Install OpenShift CLI
             uses: redhat-actions/openshift-tools-installer@v1
