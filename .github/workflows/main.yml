@@ -17,6 +17,7 @@ jobs:
             run: |
               docker login -u denzoenzo916 -p ${{ secrets.DOCKER_HUB_TOKEN }}
               docker tag my-react-app denzoenzo916/my-react-app:v1.0
+              docker push my-react-app:latest
             
              
             
