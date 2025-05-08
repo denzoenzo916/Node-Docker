@@ -10,14 +10,14 @@ jobs:
           - name: checkout code 
             uses: actions/checkout@v3
 
-          - name: Docker build image
-            run: docker build -t my-react-app:latest .
+          - name: Podman build image
+            run: podman build -t my-react-app:latest .
 
           - name: Docker push image
-            run: |
-              docker login -u denzoenzo916 -p ${{ secrets.DOCKER_HUB_TOKEN }}
-              docker tag my-react-app denzoenzo916/my-react-app:v1.0
-              docker push denzoenzo916/my-react-app:v1.0
+            run: echo "testing"
+              # docker login -u denzoenzo916 -p ${{ secrets.DOCKER_HUB_TOKEN }}
+              # docker tag my-react-app denzoenzo916/my-react-app:v1.0
+              # docker push denzoenzo916/my-react-app:v1.0
           
           - name: Install OpenShift CLI
             uses: redhat-actions/openshift-tools-installer@v1
